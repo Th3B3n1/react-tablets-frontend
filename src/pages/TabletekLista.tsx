@@ -32,14 +32,16 @@ function TabletekLista() {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: number): Promise<boolean> => {
     try {
       await fetch(`http://localhost:3000/tablets/${id}`, { method: 'DELETE' });
       fetchTablets();
       alert('Tablet sikeresen törölve!');
+      return true;
     } catch (error) {
       console.error('Hiba a tablet törlése során:', error);
       alert('Nem sikerült törölni a tabletet.');
+      return false;
     }
   };
 
@@ -61,6 +63,7 @@ function TabletekLista() {
           <TabletCard
             key={tablet.id}
             tablet={tablet}
+            showDelete={true}
             onDelete={() => handleDelete(tablet.id)}
           />
         ))}

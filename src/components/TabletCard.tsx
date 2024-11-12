@@ -2,10 +2,11 @@ import { Tablet } from '../types';
 
 type TabletCardProps = {
   tablet: Tablet;
+  showDelete: boolean;
   onDelete: () => void;
 };
 
-function TabletCard({ tablet, onDelete }: TabletCardProps) {
+function TabletCard({ tablet, showDelete, onDelete }: TabletCardProps) {
   return (
     <div className="tablet-card">
       <h2>{tablet.name}</h2>
@@ -16,7 +17,10 @@ function TabletCard({ tablet, onDelete }: TabletCardProps) {
       <p>Resolution: {tablet.resolution}</p>
       <p>RAM: {tablet.ram}</p>
       <p>Price: {tablet.price} Ft</p>
-      <button onClick={onDelete}>Delete</button>
+      {(showDelete) ?
+        <button onClick={onDelete}>Delete</button>
+        : null
+      }
     </div>
   );
 }

@@ -39,7 +39,7 @@ function Kezdolap() {
         <h2>Legdrágább 3 tablet</h2>
         <div className="tablet-list">
           {expensiveTablets.map((tablet) => (
-            <TabletCard key={tablet.id} tablet={tablet} onDelete={() => {}} />
+            <TabletCard key={tablet.id} showDelete={false} tablet={tablet} onDelete={() => {}} />
           ))}
         </div>
       </section>
@@ -48,7 +48,7 @@ function Kezdolap() {
         <h2>Legolcsóbb 3 tablet</h2>
         <div className="tablet-list">
           {cheapTablets.map((tablet) => (
-            <TabletCard key={tablet.id} tablet={tablet} onDelete={() => {}} />
+            <TabletCard key={tablet.id} showDelete={false} tablet={tablet} onDelete={() => {}} />
           ))}
         </div>
       </section>
@@ -56,7 +56,7 @@ function Kezdolap() {
       <section>
         <h2>Legnépszerűbb tablet</h2>
         {popularTablet ? (
-          <TabletCard tablet={popularTablet} onDelete={() => {}} />
+          <TabletCard tablet={popularTablet} showDelete={false} onDelete={() => {}} />
         ) : (
           <p>Nincs elérhető adat.</p>
         )}
