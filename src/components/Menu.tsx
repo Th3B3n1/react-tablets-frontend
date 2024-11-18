@@ -6,6 +6,7 @@ function Menu() {
       <Link to="/kezdolap">Kezdőlap</Link>
       <Link to="/tabletek-lista">Tabletek Lista</Link>
       <Link to="/tabletek-felvetel">Tablet Felvétele</Link>
+      <Link to="/tabletekfullcrud">Tabletek FullCRUD</Link>
     </nav>
   );
 }
